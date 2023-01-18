@@ -1,0 +1,19 @@
+@startuml
+
+entity Categories {
+    * id VARCHAR(100) <<PK>>
+    --
+    * position INT NOT NULL
+}
+
+entity CategoriesTranslations {
+    * category_id VARCHAR(100) <<FK>> <<PK>>
+    * language VARCHAR(100) <<PK>>
+    --
+    * name VARCHAR(100) NOT NULL
+    * description TEXT
+}
+
+Categories ||--o{ CategoriesTranslations
+
+@enduml
